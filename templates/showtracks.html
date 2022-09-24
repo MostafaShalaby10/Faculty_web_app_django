@@ -1,0 +1,35 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/showstyle.css' %}">
+    </head>
+    <body>
+        <div id="nav2">
+            <h1>Tracks</h1>
+          </div>
+        <div id="code">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>name</th>
+                    <th>sub_id</th>
+                    <th>Operation</th>
+                    <th>Operation</th>
+                   
+                </tr>
+            {% for i in tra  %}
+            <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.track_name}}</td>
+                    <td>{{i.subject_id_id}}</td>
+                    <td><a href = "edittracks/{{ i.id }}">Edit</a></td>
+                    <td><a href = "deletetracks/{{ i.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
+{% endblock content %}

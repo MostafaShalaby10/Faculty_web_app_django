@@ -1,0 +1,80 @@
+body
+{
+    padding: 0px;
+    margin: 0px ; 
+/*
+    background-image: url(sdasadsasdasda.jpg);
+    background-repeat: no-repeat ; 
+    background-size: contain; 
+    background-attachment: fixed;
+*/
+    background-color: rgb(128 , 0 , 0)
+}
+.hide {
+    display: none ; 
+}
+
+.apper
+{
+    display: block ;
+}
+
+#one , #two , #three , #four
+{
+    background-color: black ; 
+    color: white ;
+    text-align: center;
+    padding: 1px  ;
+    margin-top: 15% ; 
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+}
+h1
+{
+    font-size: 40px
+}
+
+#test
+{
+    text-decoration: none ; 
+    color: white;
+    font-size: 20px;
+    padding: 1px;
+    margin: 15px
+}
+#test:hover
+{
+    color: black;
+    font-size: 25px ;
+    background-color: white
+}
+
+#link
+{
+    float: right;
+    font-size: 60px;
+    margin-top: -80px; 
+    color: white;
+    text-decoration: none
+
+}
+#link1
+{
+    clear: both;
+    float: left;
+    font-size: 60px;
+    margin-top: -80px; 
+    color: white ; 
+    text-decoration: none
+}
+
+#link1:active , #link:active
+{
+    color: darkgray;
+}
+div>a
+{
+    text-decoration: none;
+    color: white;
+}

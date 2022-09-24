@@ -1,0 +1,18 @@
+{% extends 'nav.html' %}
+{% load static %} 
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/navstyle.css' %}">  
+    </head>
+    <body>
+        <div id="code">
+        <form method = "POST">
+            {% csrf_token %}
+            {{f}}
+            <input type = "submit" >
+        </form>
+    </div>
+    </body>
+</html>
+{% endblock content %}

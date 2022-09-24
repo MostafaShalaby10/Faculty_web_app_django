@@ -1,0 +1,26 @@
+#code
+{
+margin-top: 40px;
+    width: 100%;
+    text-align: center
+}
+
+table
+{
+    width: 100%;
+    border: 4px solid black ; 
+    text-align: center ;
+    border-spacing: 1px;
+    font-size: 25px
+}
+td,th,tr
+{
+    border: 1px solid black;
+}
+
+#nav2
+{
+    background-color: black;
+    text-align: center;
+    padding: 1px;
+}

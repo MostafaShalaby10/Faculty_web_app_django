@@ -1,0 +1,35 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/showstyle.css' %}">
+    </head>
+    <body>
+        <div id="nav2">
+            <h1>Subjects</h1>
+          </div>
+        <div id="code">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>name</th>
+                    <th>max_score</th> 
+                    <th>Operation</th>
+                    <th>Operation</th>
+                   
+                </tr>
+            {% for i in sub  %}
+            <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.max_score}}</td>
+                    <td><a href = "editsubjects/{{ i.id }}">Edit</a></td>
+                    <td><a href = "deletesubjects/{{ i.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
+{% endblock content %}

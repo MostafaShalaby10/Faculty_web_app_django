@@ -1,0 +1,18 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="code">
+        <form method = "POST" action="updatestudents/{{edit.id.value}}">
+            {% csrf_token %}
+               
+                    {{edit}}
+                <input type = "submit" value = "update">
+                
+        </form>
+    </div>
+    </body>
+</html>
+{% endblock content %}

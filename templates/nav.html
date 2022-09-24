@@ -1,0 +1,120 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navstyle.css' %}">
+ 
+<div id="one">
+    <h1>Students</h1>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1"> < </a>
+    <a href="{% url 'showstudents' %}" id="test">Show</a>
+    <a href="{% url 'insertstudents' %}" id="test">Insert</a>
+</div>
+<div id="two" class="hide">
+    <h1>Subjects</h1>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1">< </a>
+    <a href="{% url 'showsubjects' %}" id="test">Show</a>
+    <a href="{% url 'insertsubjects' %}" id="test">Insert</a>
+</div>     
+ <div id="three" class="hide">
+    <h1>Exam</h1>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1">< </a>
+    <a href="{% url 'showexams' %}" id="test">Show</a>
+    <a href="{% url 'insertexam' %}" id="test">Insert</a>
+    </div>     
+
+ <div id="four" class="hide">
+    <h1>Track</h1>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1"> < </a>
+    <a href="{% url 'showtracks' %}" id="test">Show</a>
+    <a href="{% url 'inserttracks' %}" id="test">Insert</a>
+
+</div>
+<script >
+    var one = document.getElementById('one')
+var two = document.getElementById('two')
+var three = document.getElementById('three')
+var four = document.getElementById('four')
+
+var current = 1 
+
+function next()
+{
+    switch(current) {
+        case 1: 
+        one.removeAttribute("class") ; 
+        one.setAttribute("class" , "hide")
+        two.removeAttribute("class")
+        two.setAttribute("class" , "apper")
+        current = 2 ; 
+        break;
+
+        case 2:
+        two.removeAttribute("class") ; 
+        two.setAttribute("class" , "hide")
+        three.removeAttribute("class")
+        three.setAttribute("class" , "apper")
+        current = 3 ; 
+        break;
+        
+        case 3: 
+        three.removeAttribute("class") ; 
+        three.setAttribute("class" , "hide")
+        four.removeAttribute("class")
+        four.setAttribute("class" , "apper")
+        current = 4 ; 
+        break;
+
+        case 4:
+        four.removeAttribute("class") ; 
+        four.setAttribute("class" , "hide")
+        one.removeAttribute("class")
+        one.setAttribute("class" , "apper")
+        current = 1 ; 
+        break;
+    }
+}
+
+function previous()
+{
+    switch(current) {
+        case 1: 
+        one.removeAttribute("class") ; 
+        one.setAttribute("class" , "hide")
+        four.removeAttribute("class")
+        four.setAttribute("class" , "apper")
+        current = 4 ; 
+        break;
+
+        case 2:
+        two.removeAttribute("class") ; 
+        two.setAttribute("class" , "hide")
+        one.removeAttribute("class")
+        one.setAttribute("class" , "apper")
+        current = 1 ; 
+        break;
+            
+        case 3: 
+        three.removeAttribute("class") ; 
+        three.setAttribute("class" , "hide")
+        two.removeAttribute("class")
+        two.setAttribute("class" , "apper")
+        current = 2 ; 
+        break;
+
+        case 4:
+        four.removeAttribute("class") ; 
+        four.setAttribute("class" , "hide")
+        three.removeAttribute("class")
+        three.setAttribute("class" , "apper")
+        current = 3 ; 
+        break;
+    }
+}
+</script>
+     
+
+{% block content %}{% endblock content %}
+
+{% include "footer.html" %}

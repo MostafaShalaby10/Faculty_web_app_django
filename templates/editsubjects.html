@@ -1,0 +1,28 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="code">
+        <form method = "POST" action="updatesubjects/{{edit.id.value}}">
+            {% csrf_token %}
+            {% comment %} <label>ID</label>
+            <input type="number" name="id" value = "{{edit.id}}">
+            <br>
+            <hr>
+            <label>name</label>
+            <input type="text" name="name" value = "{{edit.name}}">
+            <br>
+            <hr>
+            <label>Max_score</label>
+            <input type="number" name="max_score" value = "{{edit.max_score}}"> {% endcomment %}
+           {{edit}}
+           <input type = "submit" value = "update">
+
+        </form>
+        {% comment %} <a href = "updatesubjects/{{ edit.id }}">Update</a>  {% endcomment %}
+    </div>
+    </body>
+</html>
+{% endblock content %}

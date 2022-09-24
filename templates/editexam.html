@@ -1,0 +1,35 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="code">
+        <form method = "POST" action="updateexam/{{edit.id.value}}">
+            {% csrf_token %}
+                {% comment %} <label>ID</label>
+                <input type="text" name="id" value = "{{edit.id}}">
+                <br>
+                <hr>
+                <label>Score</label>
+                <input type="number" name="score" value = "{{edit.score}}">
+                <br>
+                <hr>
+                <label>Date</label>
+                <input type="date" name="date" value = "{{edit.date}}">
+                <br>
+                <hr>
+                <label>Student_id</label>
+                <input type="text" name="student_id_id" value = "{{edit.student_id}}">
+                <br>
+                <hr>
+                <label>Subject_id</label>
+                <input type="text" name="subject_id_id" value = "{{edit.subject_id}}"> {% endcomment %}
+                {{edit}}
+                <input type = "submit" value = "update">
+        </form>
+        {% comment %} <a href = "updateexam/{{ edit.id }}">Update</a>  {% endcomment %}
+    </div>
+    </body>
+</html>
+{% endblock content %}

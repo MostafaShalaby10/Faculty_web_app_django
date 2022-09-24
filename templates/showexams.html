@@ -1,0 +1,39 @@
+{% extends 'nav.html' %}
+{% load static %}
+{% block content %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/showstyle.css' %}">
+    </head>
+    <body>
+        <div id="nav2">
+            <h1>Exam</h1>
+          </div>
+        <div id="code">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>score</th>
+                    <th>date</th>
+                    <th>student_id</th>
+                    <th>subject_id</th>
+                    <th>Operation</th>
+                    <th>Operation</th>
+                    
+                </tr>
+            {% for i in ex  %}
+            <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.score}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.student_id_id}}</td>
+                    <td>{{i.subject_id_id}}</td>
+                    <td><a href = "editexam/{{ i.id }}">Edit</a></td>
+                    <td><a href = "deleteexam/{{ i.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </body>
+</html>
+{% endblock content %}

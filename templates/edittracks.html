@@ -1,0 +1,27 @@
+{% extends 'nav.html' %}
+{% block content %}
+<html>
+    <head>
+    </head>
+    <body>
+        <div id="code">
+        <form method = "POST" action="updatetracks/{{edit.id.value}}">
+            {% csrf_token %}
+            {% comment %} <label>ID</label>
+                <input type="text" name="id" value = "{{edit.id}}">
+                <br>
+                <hr>
+                <label>Track_name</label>
+                <input type="text" name="track_name" value = "{{edit.track_name}}">
+                <br>
+                <hr>
+                <label>Subject_id</label>
+                <input type="text" name="subject_id" value = "{{edit.subject_id}}"> {% endcomment %}
+                {{edit}}
+                <input type = "submit" value = "update">
+        </form>
+
+    </div>
+    </body>
+</html>
+{% endblock content %}

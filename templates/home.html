@@ -1,0 +1,119 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/homestyle.css' %}">
+
+<div id="one">
+    <a href="{% url 'showstudents' %}">
+    <h1>Students</h1>
+    </a>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1"> < </a>
+
+</div>
+<div id="two" class="hide">
+    <a href="{% url 'showsubjects' %}">
+    <h1>Subjects</h1>
+    </a>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1">< </a>
+    
+</div>     
+ <div id="three" class="hide">
+     <a href="{% url 'showexams' %}">
+     <h1>Exam</h1>
+     </a>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1">< </a>
+   
+    </div>     
+
+ <div id="four" class="hide">
+     <a href="{% url 'showtracks' %}">
+     <h1>Track</h1>
+     </a>
+    <a href="#" onclick="next()" id="link">></a>
+    <a href="#" onclick="previous()" id="link1"> < </a>
+   
+
+</div>
+<script >
+    var one = document.getElementById('one')
+var two = document.getElementById('two')
+var three = document.getElementById('three')
+var four = document.getElementById('four')
+
+var current = 1 
+
+function next()
+{
+    switch(current) {
+        case 1: 
+        one.removeAttribute("class") ; 
+        one.setAttribute("class" , "hide")
+        two.removeAttribute("class")
+        two.setAttribute("class" , "apper")
+        current = 2 ; 
+        break;
+
+        case 2:
+        two.removeAttribute("class") ; 
+        two.setAttribute("class" , "hide")
+        three.removeAttribute("class")
+        three.setAttribute("class" , "apper")
+        current = 3 ; 
+        break;
+        
+        case 3: 
+        three.removeAttribute("class") ; 
+        three.setAttribute("class" , "hide")
+        four.removeAttribute("class")
+        four.setAttribute("class" , "apper")
+        current = 4 ; 
+        break;
+
+        case 4:
+        four.removeAttribute("class") ; 
+        four.setAttribute("class" , "hide")
+        one.removeAttribute("class")
+        one.setAttribute("class" , "apper")
+        current = 1 ; 
+        break;
+    }
+}
+
+function previous()
+{
+    switch(current) {
+        case 1: 
+        one.removeAttribute("class") ; 
+        one.setAttribute("class" , "hide")
+        four.removeAttribute("class")
+        four.setAttribute("class" , "apper")
+        current = 4 ; 
+        break;
+
+        case 2:
+        two.removeAttribute("class") ; 
+        two.setAttribute("class" , "hide")
+        one.removeAttribute("class")
+        one.setAttribute("class" , "apper")
+        current = 1 ; 
+        break;
+            
+        case 3: 
+        three.removeAttribute("class") ; 
+        three.setAttribute("class" , "hide")
+        two.removeAttribute("class")
+        two.setAttribute("class" , "apper")
+        current = 2 ; 
+        break;
+
+        case 4:
+        four.removeAttribute("class") ; 
+        four.setAttribute("class" , "hide")
+        three.removeAttribute("class")
+        three.setAttribute("class" , "apper")
+        current = 3 ; 
+        break;
+    }
+}
+</script>
